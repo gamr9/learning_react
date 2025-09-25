@@ -1,4 +1,4 @@
-import { heroes, type Hero} from "../data/heroes.data"
+import { heroes, type Hero, type Owner} from "../data/heroes.data"
 
 
 const getHeroById = (id: number): Hero | undefined => {
@@ -14,3 +14,13 @@ const getHeroById = (id: number): Hero | undefined => {
 }
 
 console.log(getHeroById(2));
+
+/**
+ * @param Owner
+ * @returns Array
+ */
+export const getHeroByOwner = (owner: Owner) => {
+    const getHeroByOwner = heroes.filter(hero => hero.owner = owner);
+    return getHeroByOwner;
+}
+

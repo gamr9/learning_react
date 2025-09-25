@@ -6,10 +6,12 @@ export interface Hero {
  
 //type Owner = 'DC' | 'Marvel';
 
-enum Owner {
-    DC = 'DC',
-    Marvel = 'Marvel',
-}
+export const Owner =  {
+    DC: 'DC',
+    Marvel: 'Marvel',
+} as const;
+
+export type Owner = typeof Owner[keyof typeof Owner];
 
 export const heroes: Hero[] = [
   {
